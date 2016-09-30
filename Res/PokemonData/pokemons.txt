@@ -1,12 +1,12 @@
 11
-Pikachu 0 3 3 60
-Bulbasaur 1 3 3 60
-Ivysaur 2 6 6 120
-Venusaur 3 9 9 200
-Charmander 4 3 3 60
-Charmeleon 5 6 6 120
-Charizard 6 9 9 200
-Squirtle 7 3 3 60
-Wartortle 8 6 6 120
-Blastoise 9 9 9 200
-Articuno 10 20 20 400
+Pikachu 0 3 3 60 9 
+Bulbasaur 1 3 3 60 27
+Ivysaur 2 6 6 120 28
+Venusaur 3 9 9 200 29
+Charmander 4 3 3 60 18
+Charmeleon 5 6 6 120 19
+Charizard 6 9 9 200 20
+Squirtle 7 3 3 60 51
+Wartortle 8 6 6 120 52
+Blastoise 9 9 9 200 53
+Articuno 10 20 20 400 35

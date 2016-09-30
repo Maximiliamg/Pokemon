@@ -67,14 +67,19 @@ public class EntityManager {
         String file = Utils.loadFileAsString("res/PokemonData/pokemons.txt");
         String[] tokens = file.split("\\s+");
         pkNumber = Utils.parseInt(tokens[0]);
-        pkData = new String[pkNumber][5];
+        pkData = new String[pkNumber][6];
         int t = 1;
         for (int i = 0; i < pkNumber; i++) {
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < 6; j++) {
                 pkData[i][j] = tokens[t];
                 t++;
             }
-        }       
+        }
+//        for (int i = 0; i < pkNumber; i++) {
+//            for (int j = 0; j < 6; j++) {
+//                System.out.println(pkData[i][j]);
+//            }
+//        }
     }
 
     public void addEntity(Entity e) {

@@ -48,6 +48,10 @@ public class Tile {
     public boolean isSolid() {
         return false;
     }
+    
+    public boolean isSpawneable(){
+        return false;
+    }
 
     public int getId() {
         return id;

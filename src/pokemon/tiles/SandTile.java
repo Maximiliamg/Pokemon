@@ -18,4 +18,8 @@ public class SandTile extends Tile{
         super(Assets.sand, id);
     }
     
+    @Override
+    public boolean isSpawneable(){
+        return true;
+    }
 }

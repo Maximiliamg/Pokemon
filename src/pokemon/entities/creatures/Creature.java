@@ -37,11 +37,14 @@ public abstract class Creature extends Entity {
             moveX();
         } else {
             pokemonInContact = checkPokemonCollision(xMove, yMove);
+            System.out.println(pokemonInContact.name);
         }
         if (!checkEntityCollisions(0f, yMove)) {
             moveY();
-        }else{
+        } else {
             pokemonInContact = checkPokemonCollision(xMove, yMove);
+            System.out.println(pokemonInContact.name);
+
         }
     }
 

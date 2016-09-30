@@ -9,6 +9,8 @@ import java.awt.Graphics;
 import java.util.Random;
 import pokemon.Game;
 import pokemon.Handler;
+import pokemon.attacks.Attack;
+import pokemon.attacks.AttackManager;
 import pokemon.entities.EntityManager;
 import pokemon.entities.creatures.Player;
 import pokemon.entities.statics.Pokemon;
@@ -25,10 +27,13 @@ public class World {
     public int randX, randY;
     //Entities
     private EntityManager entityManager;
+    private AttackManager attackManager;
+    Pokemon pokemon;
 
     public World(Handler handler, String path) {
         this.handler = handler;
         entityManager = new EntityManager(handler, new Player(handler, 100, 100));
+        attackManager = new AttackManager(handler);
 
         loadWorld(path);
         //Entity adding
@@ -39,11 +44,13 @@ public class World {
                     entityManager.getPkData()[i][0],
                     Utils.parseInt(entityManager.getPkData()[i][2]),
                     Utils.parseInt(entityManager.getPkData()[i][3]),
-                    Utils.parseInt(entityManager.getPkData()[i][4])));
+                    Utils.parseInt(entityManager.getPkData()[i][4]),
+                    Utils.parseInt(entityManager.getPkData()[i][5])));
         }
-
+        
         entityManager.getPlayer().setX(SpawnX);
         entityManager.getPlayer().setY(SpawnY);
+        
     }
 
     public void tick() {
@@ -108,7 +115,7 @@ public class World {
     }
 
     public boolean validTile(int x, int y) {
-        if (Tile.tiles[tiles[x / 32][y / 32]].isSolid() == false) {
+        if (Tile.tiles[tiles[x / 32][y / 32]].isSpawneable() == true) {
             return true;
         }
         return false;

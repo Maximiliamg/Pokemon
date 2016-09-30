@@ -13,15 +13,18 @@ import pokemon.gfx.Assets;
 import pokemon.ui.ClickListener;
 import pokemon.ui.UIImageButton;
 import pokemon.ui.UIManager;
+import pokemon.ui.UITextLable;
 
 public class MenuState extends State {
 
-    //private UIManager uiManager;
+    private UIManager uiManager;
 
     public MenuState(Handler handler) {
         super(handler);
-        //uiManager = new UIManager(handler);
+        uiManager = new UIManager(handler);
         //handler.getMouseManager().setUIManager(uiManager);
+        
+        uiManager.addObject(new UITextLable(100, 100, 100, 100, "PRESS ENTER TO START", 32));
         
         
     }
@@ -31,12 +34,12 @@ public class MenuState extends State {
         if (handler.getKeyManager().enter) {
             State.setState(handler.getGame().selectionState);
         }
-        //uiManager.tick();
+        uiManager.tick();
     }
 
     @Override
     public void render(Graphics g) {
-        //uiManager.render(g);
+        uiManager.render(g);
     }
 
 }
